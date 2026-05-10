@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: waterfoam
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 19689012, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1224774856, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: -1963434874, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1629729707, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 556016027, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: -310477906, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 742075937, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: -950773997, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 913377276, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1570537455, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1782699406, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1739016772, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1104454446, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 76590444, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: 1096474161, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  - {fileID: -1616493719, guid: 9fb69321acf15414590cbb41fff8b63e, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
