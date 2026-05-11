@@ -15,6 +15,12 @@ public class Enemy_health : MonoBehaviour
 
     private Coroutine updateCoroutine;
 
+    public int expReward = 3;
+    public delegate void MonsterDefeated(int exp);
+    public static event MonsterDefeated OnMonsterDefeated;
+
+
+
     void Start()
     {
         cur_health = max_health;
@@ -29,6 +35,7 @@ public class Enemy_health : MonoBehaviour
         {
             gameObject.SetActive(false);
             healthbarCanvas.SetActive(false);
+            OnMonsterDefeated(expReward);
         }
 
         cur_health = Mathf.Clamp(cur_health, 0, max_health);

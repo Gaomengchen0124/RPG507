@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class player_health : MonoBehaviour
 {
-    public int max_health;
-    public int cur_health;
 
     public Image hpImg;
     public Image hpEffectImg;

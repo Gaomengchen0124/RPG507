@@ -7,14 +7,8 @@ public class Player_combat : MonoBehaviour
     public Animator anim;
     public Transform attackpoint;
     public LayerMask EnemyLayer;
-    public float weaponRange;
-    public int damage;
-    public float coolDown;
     private float timer;
 
-    public float KnockBackForce = 50;
-    public float stunTime = 0.1f;
-    
     private void Update()
     {
         if ( timer > 0)
@@ -27,16 +21,16 @@ public class Player_combat : MonoBehaviour
         if ( timer <= 0)
         {
             anim.SetBool("isAttacking", true);
-            timer = coolDown;
+            timer = StatsManager.Instance.coolDown;
         }
     }
     
     public void DealDamage()
     {
-        Collider2D[] enemy = Physics2D.OverlapCircleAll( attackpoint.position, weaponRange, EnemyLayer);
+        Collider2D[] enemy = Physics2D.OverlapCircleAll( attackpoint.position, StatsManager.Instance.weaponRange, EnemyLayer);
         if ( enemy.Length > 0)
         {
-            enemy[0].GetComponent<Enemy_health>().Changehealth(-damage);
+            enemy[0].GetComponent<Enemy_health>().Changehealth(-StatsManager.Instance.damage);
             enemy[0].GetComponent<Enemy_KnockBack>().KnockBack(transform, StatsManager.Instance.KnockBackForce, StatsManager.Instance.stunTime);
         }
     }
@@ -44,7 +38,7 @@ public class Player_combat : MonoBehaviour
         private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere( attackpoint.position, weaponRange);
+        Gizmos.DrawWireSphere( attackpoint.position, StatsManager.Instance.weaponRange);
 
     }
     public void FinishAttacking()

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playermovement : MonoBehaviour
 {
-    public float speed = 5;
     public Rigidbody2D rd;
     public Animator anim;
     private bool isKnockBack = false;
