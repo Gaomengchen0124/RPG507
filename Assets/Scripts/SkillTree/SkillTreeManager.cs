@@ -11,10 +11,12 @@ public class SkillTreeManager : MonoBehaviour
     private void OnEnable() {
         SkillSlot.OnAvaliablePointSpent += HandlePointSpent;
         SkillSlot.OnLevelMax += HandleLevelMax;
+        ExpManager.OnLevelUp += UpdateAvailablePoints;
     }
     private void OnDisable() {
         SkillSlot.OnAvaliablePointSpent -= HandlePointSpent;
         SkillSlot.OnLevelMax += HandleLevelMax;
+        ExpManager.OnLevelUp -= UpdateAvailablePoints;
     }
     private void Start() {//这一步是给每个按钮绑定监听和升级方法
         foreach( SkillSlot slot in skillSlots)

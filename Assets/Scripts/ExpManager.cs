@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class ExpManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ExpManager : MonoBehaviour
     public float expGrowthMultiplier = 1.5F;
     public Slider expSlider;
     public TMP_Text expText;
+
+    public static event Action<int> OnLevelUp;
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class ExpManager : MonoBehaviour
         level ++;
         curExp -= expToNextLevel;
         expToNextLevel *= Mathf.RoundToInt(expGrowthMultiplier);
+        OnLevelUp?.Invoke(3);//这里可以加逻辑，先都是3吧
     }
 
     private void Update()

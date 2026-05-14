@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class player_health : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class player_health : MonoBehaviour
 
     private Coroutine updateCoroutine;
 
+    public TMP_Text hpText;
+
     void Start()
     {
         StatsManager.Instance.cur_health = StatsManager.Instance.max_health;
         UpdateHealthBar();
+        UpdateHealthText();
     }
 
     public void ChangeHealth(int amount)
@@ -29,6 +33,7 @@ public class player_health : MonoBehaviour
 
         StatsManager.Instance.cur_health = Mathf.Clamp(StatsManager.Instance.cur_health, 0, StatsManager.Instance.max_health);
         UpdateHealthBar();
+        UpdateHealthText();
     }
 
     void UpdateHealthBar()
@@ -39,6 +44,11 @@ public class player_health : MonoBehaviour
             StopCoroutine(updateCoroutine);
 
         updateCoroutine = StartCoroutine(UpdateHpEffect());
+    }
+
+    void UpdateHealthText()
+    {
+        hpText.text = "Hp: " + StatsManager.Instance.cur_health + '/' + StatsManager.Instance.max_health;
     }
 
     IEnumerator UpdateHpEffect()
