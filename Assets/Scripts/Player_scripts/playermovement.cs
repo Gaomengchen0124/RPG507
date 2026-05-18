@@ -27,7 +27,7 @@ public class playermovement : MonoBehaviour
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-            if ( !spriteRenderer.flipX && horizontal < 0 || spriteRenderer.flipX && horizontal > 0)
+            if ( transform.localScale.x > 0 && horizontal < 0 || transform.localScale.x < 0 && horizontal > 0)
             {
                 Flip();
             }
@@ -56,6 +56,8 @@ public class playermovement : MonoBehaviour
 
     void Flip()
     {
-        spriteRenderer.flipX = !spriteRenderer.flipX;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }
